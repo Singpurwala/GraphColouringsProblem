@@ -5,11 +5,12 @@ import math
 
 
 def Compare(array1, array2):
-    while len(array2) > 0:
+    clone = array2[:]
+    while len(clone) > 0:
         for i in range (len(array1)):
             element = array1[i]
-            if element in array2:
-                array2.remove(element);
+            if element in clone:
+                clone.remove(element);
             else:
                 return False;
     return True;
@@ -34,8 +35,8 @@ def checkExists(currentVertex,similar):
             comparecolors.append(compareNeighbours[n].colornum)
         checker = Compare(currentcolors, comparecolors)
         if checker == True:
-            return True;
-    return False;
+            return m;
+    return -1;
 
 
 #open the graph, choose L[0][0] or L[0][1] depending on which graph you want to choose
@@ -85,11 +86,12 @@ for i in range(maxcolor):
     for j in range(len(neighbours)):
         colors.append(neighbours[j].colornum)
 
-
+    previous = [];
     #compare array:colors to similar[k].neighbours.colors
     for k in range(1,len(similar)):
         #make the variables based on the current vertex you want to compare to
         currentvertex = similar[k];
+        previous.append(similar[k])
         currentNeighbours = currentvertex.neighbours;
         currentcolors = [];
         #get all colornums for the neighbours of current vertex
@@ -102,7 +104,7 @@ for i in range(maxcolor):
             print("okay!")
         #give non similar values a new color
         else:
-            existing = checkExists(currentvertex,similar)
+            existing = checkExists(currentvertex,previous)
             print(existing)
             if (existing == True):
                 print("hello")

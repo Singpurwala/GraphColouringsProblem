@@ -319,7 +319,28 @@ class Graph(object):
         :param other: Graph to add to `self'.
         :return: New graph which is a disjoint union of `self' and `other'.
         """
-        # TODO: implementation
+
+        G = Graph(True,0)
+
+        for i in range(len(other.vertices)):
+            toAdd = Vertex(G,other.vertices[i])
+            G.add_vertex(toAdd)
+
+        for j in range(len(other.edges)):
+            G.add_edge((other.edges[j]))
+
+        for k in range(len(self.vertices)):
+
+            exists = False;
+            toAdd = Vertex(G,self.vertices[k])
+            #for m in range(len(G.vertices)):
+            #    if toAdd.__repr__() == G.vertices[m].__repr__():
+            #        exists = True
+            #if(not exists):
+            G.add_vertex(toAdd)
+        for l in range(len(self.edges)):
+            G.add_edge((self.edges[l]))
+        print(G)
         pass
 
     def __iadd__(self, other: Union[Edge, Vertex]) -> "Graph":
@@ -399,3 +420,4 @@ class UnsafeGraph(Graph):
 
     def is_adjacent(self, u: "Vertex", v: "Vertex") -> bool:
         return v in u._incidence or (not self._directed and u in v._incidence)
+

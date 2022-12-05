@@ -1,6 +1,6 @@
 # Graph isomorphism colourings problem
 
-Group of 4 people , uni project \
+Group of 4 people , uni project 
 
 ## The Problem statement 
 The graph isomorphism problem is the computational problem of determining whether two finite graphs are isomorphic.

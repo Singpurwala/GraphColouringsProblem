@@ -12,3 +12,9 @@ Here this problem was solved using python by colouring each edge and seeing if i
 ## Desired Output
 So if A is isomorphic to B. func(A≅B) -> true. 
 So if A is NOT isomorphic to B. func(A≅B) -> false. 
+![image](https://user-images.githubusercontent.com/44605305/231787426-202db02b-b305-4a27-8ece-0389b97f3474.png)
+
+
+##  Algorithm Testing 
+
+The algorithm was tested on numerous sample graphs for first of all getting the desired output and second, to be relatively efficienct on large graph sets. Feel free to test on sampe sets and further optimise!
